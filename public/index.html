@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">JobHub</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" id="homeLink" class="nav-link">Home</a></li>
+                    <li><a href="#" id="savedJobsLink" class="nav-link">Saved Jobs</a></li>
+                    <li><a href="#" id="loginLink" class="nav-link">Login</a></li>
+                    <li><a href="#" id="registerLink" class="nav-link">Register</a></li>
+                    <li><a href="#" id="logoutLink" class="nav-link" style="display: none;">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <div id="loginForm" class="form-container" style="display: none;">
+                <h2>Login</h2>
+                <form id="loginFormElement" class="form">
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <select id="loginUserType">
+                        <option value="seeker">Job Seeker</option>
+                        <option value="poster">Job Poster</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div id="registerForm" class="form-container" style="display: none;">
+                <h2>Register</h2>
+                <form id="registerFormElement" class="form">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <select id="registerUserType">
+                        <option value="seeker">Job Seeker</option>
+                        <option value="poster">Job Poster</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+            <div id="jobPostForm" class="form-container" style="display: none;">
+                <h2>Post a New Job</h2>
+                <form id="jobPostFormElement" class="form">
+                    <input type="text" id="jobTitle" placeholder="Job Title" required>
+                    <input type="text" id="jobCompany" placeholder="Company" required>
+                    <input type="number" id="jobSalary" placeholder="Salary" required>
+                    <textarea id="jobDescription" placeholder="Job Description" required></textarea>
+                    <select id="jobType" required>
+                        <option value="remote">Remote</option>
+                        <option value="onsite">Onsite</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Post Job</button>
+                </form>
+            </div>
+            <div id="searchAndFilters" class="search-filters">
+                <input type="text" id="searchInput" placeholder="Search jobs..." class="search-input">
+                <div id="filters" class="filters">
+                    <label><input type="checkbox" class="jobTypeFilter" value="remote"> Remote</label>
+                    <label><input type="checkbox" class="jobTypeFilter" value="onsite"> Onsite</label>
+                    <label><input type="checkbox" class="jobTypeFilter" value="hybrid"> Hybrid</label>
+                </div>
+            </div>
+            <div id="jobListings" class="job-listings"></div>
+            <div id="savedJobs" class="job-listings" style="display: none;"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 JobHub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
+
